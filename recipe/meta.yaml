@@ -26,10 +26,8 @@ requirements:
     - cffi
     - click
     - eccodes >=2.12.0
-    - future
     - numpy
     - python
-    - typing
     - xarray >=0.12.0
 
 test:

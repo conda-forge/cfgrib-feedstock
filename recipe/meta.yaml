@@ -28,6 +28,7 @@ requirements:
     - click
     - eccodes >=2.12.0
     - numpy
+    - setuptools
     - xarray >=0.12.0
 
 test:

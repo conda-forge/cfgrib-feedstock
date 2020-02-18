@@ -23,7 +23,7 @@ requirements:
     - pytest-runner
   run:
     - python >=3.5
-    - attrs
+    - attrs >=19.2.0
     - cffi
     - click
     - eccodes >=2.12.0

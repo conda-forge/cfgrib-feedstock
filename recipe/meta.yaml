@@ -1,20 +1,20 @@
 {% set name = "cfgrib" %}
-{% set version = "0.9.7.7" %}
+{% set version = "0.9.8.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 728f07de90d54c498248255c5eab7622296778e9bc94eb777d6ab69fc48bd9bf
+  sha256: e2cfb05c4e92e033d461ff30101602a6cfe1ae4161ab6b9b67471802272a7c40
 
 build:
   noarch: python
   number: 0
   entry_points:
     - cfgrib=cfgrib.__main__:cfgrib_cli
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:

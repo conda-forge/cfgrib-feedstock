@@ -5,11 +5,13 @@ Home: https://github.com/ecmwf/cfgrib
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cfgrib-feedstock/blob/master/LICENSE.txt)
 
 Summary: Maps GRIB files to the NetCDF Common Data Model with CF Convention using ecCodes
 
+Development: https://github.com/ecmwf/cfgrib
 
+Documentation: https://github.com/ecmwf/cfgrib
 
 Current build status
 ====================

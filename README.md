@@ -122,4 +122,4 @@ Feedstock Maintainers
 * [@StephanSiemen](https://github.com/StephanSiemen/)
 * [@akrherz](https://github.com/akrherz/)
 * [@alexamici](https://github.com/alexamici/)
-
+* [@iainrussell](https://github.com/iainrussell/)

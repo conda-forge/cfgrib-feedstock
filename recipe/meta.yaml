@@ -1,5 +1,5 @@
 {% set name = "cfgrib" %}
-{% set version = "0.9.10.4" %}
+{% set version = "0.9.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b490078192aa13ec89c77296110355521442325866b16a996f4b3cf421542909
+  sha256: b2e1e030a53d9ef8028145943c1560c90b3bc324891766f02905a1d714434a1c
 
 build:
   noarch: python

@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a6e66e8a3d8f9823d3eef0c2c6ebca602d5bcc324f0baf4f3d13f68b0b40501e
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - cfgrib=cfgrib.__main__:cfgrib_cli
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - pytest-runner
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - attrs >=19.2
     - click
     - packaging
@@ -32,6 +32,8 @@ requirements:
     - xarray >=0.15
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - cf2cdm
     - cfgrib

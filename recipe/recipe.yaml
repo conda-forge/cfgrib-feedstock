@@ -1,0 +1,63 @@
+schema_version: 1
+
+context:
+  name: cfgrib
+  version: "0.9.15.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: d959d8b97e55a63646fa86686b297905ff7f2918a91e3a11d6292dab09598e4d
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+  python:
+    entry_points:
+      - cfgrib=cfgrib.__main__:cfgrib_cli
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - pytest-runner
+  run:
+    - python >=${{ python_min }}
+    - attrs >=19.2
+    - click
+    - packaging
+    - python-eccodes >=0.9.8
+    - numpy
+    - setuptools
+    - xarray >=0.15
+
+tests:
+  - python:
+      imports:
+        - cf2cdm
+        - cfgrib
+      pip_check: false
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - script:
+      - cfgrib --help
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Maps GRIB files to the NetCDF Common Data Model with CF Convention using ecCodes
+  homepage: https://github.com/ecmwf/cfgrib
+  repository: https://github.com/ecmwf/cfgrib
+  documentation: https://github.com/ecmwf/cfgrib
+
+extra:
+  recipe-maintainers:
+    - alexamici
+    - akrherz
+    - StephanSiemen
+    - iainrussell
